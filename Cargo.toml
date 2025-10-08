@@ -1,0 +1,24 @@
+[package]
+name = "loony_os"
+version = "0.1.0"
+edition = "2024"
+authors = ["Sankar Boro <s4nk4r.b0r0@gmail.com>"]
+
+[[bin]]
+name = "loony_os"
+path="src/main.rs"
+test = false
+bench = false
+
+[dependencies]
+bootloader = "0.9"
+
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[package.metadata.bootimage]
+# size of the image's kernel (not usually needed to change)
